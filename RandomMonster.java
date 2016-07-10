@@ -6,7 +6,7 @@ public class RandomMonster{
   characterMap=this.createMap();
   
   }
-  List<String,List<String>> createMap(){
+  Map<String,List<String>> createMap(){
   
   
   }
