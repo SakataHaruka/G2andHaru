@@ -7,8 +7,10 @@ public class RandomMonster{
   
   }
   Map<String,List<String>> createMap(){
-  
-  
+  Map<String, List<String>> characterMap = new HashMap<String, List<String>>();
+  List<String> AttributeAndAbility=new ArrayList<String>();
+  characterMap.put();
+return characterMap;
   }
   public static void main(String[] args){
   RandomMonster RM=new RandomMonster();
