@@ -4,6 +4,8 @@ public class RandomMonster{
   void run(String[] arg){
   Map<String, List<String>> characterMap = new HashMap<String, List<String>>();
   characterMap=this.createMap();
+  System.out.println("***モンスト自動編成マシン***");
+  System.out.println("[挑戦するクエストのアビリティを教えてね]");
   
   }
   Map<String,List<String>> createMap(){
