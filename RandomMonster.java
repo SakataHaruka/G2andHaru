@@ -26,7 +26,7 @@ public class RandomMonster{
       Integer count=0;
       for(String candidateMember:candidate){
         for(String target:candidate){
-          if(Object.equals(target,candidate)){
+          if(Object.equals(target,candidateMember)){
           count+=1;
           }
           if(count==abilityCount){
