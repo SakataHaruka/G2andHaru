@@ -39,7 +39,10 @@ public class RandomMonster{
       count=0;
        }
       }
-    System.out.println("そのクエストに対応したキャラは")
+      elementCount=member.size();
+      Integer random =rand.nextInt(elementCount);
+      System.out.println("そのクエストには"+member.get(random)+"がオススメです")
+    System.out.println("他にそのクエストに対応したキャラは")
     for(String printmember:member){
       System.out.println(printmember);
       }
