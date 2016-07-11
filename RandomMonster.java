@@ -20,6 +20,7 @@ public class RandomMonster{
             for(String string:list){//アビリティに対応したキャラをcandidateに追加      
                 candidate.add(string);
             }
+            abilitycount+=1;
         }
      
       Integer count=0;
