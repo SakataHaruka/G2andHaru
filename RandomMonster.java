@@ -24,22 +24,23 @@ public class RandomMonster{
         }
      
       Integer count=0;
-      for(String candidateMember){
-      for(String target:candidate){
-        if(Object.equals(target,candidate)){
-        count+=1;
-        }
-        if(count==abilityCount){
+      for(String candidateMember:candidate){
+        for(String target:candidate){
+          if(Object.equals(target,candidate)){
+          count+=1;
+          }
+          if(count==abilityCount){
           //リスト型に渡す
           member.add(target);
           break;
+          }
         }
+      count++;
       }
-      System.out.println("そのクエストに対応したキャラは")
-      for(String printmember:member){
+    System.out.println("そのクエストに対応したキャラは")
+    for(String printmember:member){
       System.out.println(printmember);
       }
-  }
   }
   Map<String,List<String>> createMap(){
     Map<String, List<String>> characterMap = new HashMap<String, List<String>>();
