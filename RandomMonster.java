@@ -20,22 +20,22 @@ public class RandomMonster{
             for(String characterName:monsterList){//アビリティに対応したキャラをcharacterNameに代入
                 candidate.add(characterName);//候補のリストにキャラ名を代入
             }
-            abilitycount+=1;
+            abilitycount+=1;//ギミック数が+1されたことがわかる
         }
      
       Integer count=0;
-      for(String checkObject:candidate){
-        for(String target:candidate){
-          if(Object.equals(target,checkObject)){
-          count+=1;
+      for(String checkObject:candidate){//candidateリストの中身をcheckObjectに一つずつ代入する
+        for(String target:candidate){//candidateリストの中身をtargetに一つずつ代入する
+          if(Object.equals(target,checkObject)){//targetとcheckObjectが同じかどうかを判断
+          count+=1;//同じだったらcountを+1。
           }
-          if(count==abilityCount){
+          if(count==abilityCount){//ギミック数とcountが同じになったものがギミック対応モンスターとなる
           //リスト型に渡す
-          member.add(target);
+          member.add(target);//それらをmemberのリストに入れる
           break;
           }
         }
-      count++;
+      count=0;
       }
     System.out.println("そのクエストに対応したキャラは")
     for(String printmember:member){
