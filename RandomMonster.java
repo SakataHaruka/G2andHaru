@@ -37,8 +37,41 @@ public class RandomMonster{
   }
   Map<String,List<String>> createMap(){
     Map<String, List<String>> characterMap = new HashMap<String, List<String>>();
-    List<String> AttributeAndAbility=new ArrayList<String>();
-    characterMap.put();
+    //重力                                                                         
+        List<String> AG=new ArrayList<String>();
+        AG.add("イザナミ");
+        AG.add("毘沙門天");
+        AG.add("阿修羅");
+        AG.add("不動明王");
+        characterMap.put("重力",AG);
+
+        //壁                                                                           
+        List<String> Wall=new ArrayList<String>();
+        Wall.add("ヤマトタケル");
+        Wall.add("不動明王");
+        Wall.add("イザナギ");
+        Wall.add("大黒天");
+        Wall.add("クシナダ");
+        characterMap.put("壁",Wall);
+
+        //ワープ                                                                       
+        List<String> Warp=new ArrayList<String>();
+        Warp.add("イザナミ");
+        Warp.add("毘沙門天");
+        Warp.add("ヤマトタケル");
+        Warp.add("ツクヨミ");
+        Warp.add("大黒天");
+        Warp.add("摩利支天");
+        characterMap.put("ワープ",Warp);
+        
+        //マイン                                                                       
+        List<String> Mine=new ArrayList<String>();
+        Mine.add("ツクヨミ");
+        Mine.add("クシナダ");
+        Mine.add("摩利支天");
+        Mine.add("阿修羅");
+        characterMap.put("マイン",Mine);
+
     return characterMap;
   }
   public static void main(String[] args){
