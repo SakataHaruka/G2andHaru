@@ -37,7 +37,8 @@ public class RandomMonster{
   }
   Map<String,List<String>> createMap(){
     Map<String, List<String>> characterMap = new HashMap<String, List<String>>();
-    //重力                                                                         
+        
+        //重力                                                                         
         List<String> AG=new ArrayList<String>();
         AG.add("イザナミ");
         AG.add("毘沙門天");
