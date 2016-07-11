@@ -11,8 +11,18 @@ public class RandomMonster{
     System.out.println("使用できるアビリティ");
     System.out.println("重力、壁、マイン、ワープ");
     
+    Integer i=1;
+    String candidate
       for(String ability:args){
-        abilityList.add(ability);
+        if(ability==Mapkey){//書き方がわからない
+          candidate=mapkey.value;//書き方がわからない
+        }
+        i+=1;
+      }
+      for(String target:candidate){
+        if(Object.equals(target,candidate)){
+        
+        }
       }
   }
   Map<String,List<String>> createMap(){
