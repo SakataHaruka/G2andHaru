@@ -12,20 +12,22 @@ public class RandomMonster{
     System.out.println("使用できるアビリティ");
     System.out.println("重力、壁、マイン、ワープ");
     
-    Integer i=0;
-    String candidate
-      for(String ability:args){
-        if(ability==Mapkey){//書き方がわからない
-          candidate=mapkey.value;//書き方がわからない
+    Integer abilityCount=0;
+    List<String> candidate=new ArrayList<String>();
+      for(String ability:args){//コマンドラインのループ
+         List<String> list=new ArrayList<String>();
+            list=characterMap.get(ability);
+            for(String string:list){//アビリティに対応したキャラをcandidateに追加      
+                candidate.add(string);
+            }
         }
-        i+=1;
-      }
+     
       Integer count=0;
       for(String target:candidate){
         if(Object.equals(target,candidate)){
         count+=1;
         }
-        if(count==i){
+        if(count==abilityCount){
           //リスト型に渡す
           member.add(target);
         }
