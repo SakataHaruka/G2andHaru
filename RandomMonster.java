@@ -24,9 +24,9 @@ public class RandomMonster{
         }
      
       Integer count=0;
-      for(String candidateMember:candidate){
+      for(String checkObject:candidate){
         for(String target:candidate){
-          if(Object.equals(target,candidateMember)){
+          if(Object.equals(target,checkObject)){
           count+=1;
           }
           if(count==abilityCount){
