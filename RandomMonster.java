@@ -25,6 +25,7 @@ public class RandomMonster{
      
       Integer count=0;
       for(String checkObject:candidate){//candidateリストの中身をcheckObjectに一つずつ代入する
+       if(!member.contains(checkObject)){
         for(String target:candidate){//candidateリストの中身をtargetに一つずつ代入する
           if(Object.equals(target,checkObject)){//targetとcheckObjectが同じかどうかを判断
           count+=1;//同じだったらcountを+1。
@@ -36,6 +37,7 @@ public class RandomMonster{
           }
         }
       count=0;
+       }
       }
     System.out.println("そのクエストに対応したキャラは")
     for(String printmember:member){
