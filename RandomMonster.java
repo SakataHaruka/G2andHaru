@@ -12,13 +12,13 @@ public class RandomMonster{
     System.out.println("使用できるアビリティ");
     System.out.println("重力、壁、マイン、ワープ");
     
-    Integer abilityCount=0;
-    List<String> candidate=new ArrayList<String>();
-      for(String ability:args){//コマンドラインのループ
-         List<String> list=new ArrayList<String>();
-            list=characterMap.get(ability);
-            for(String string:list){//アビリティに対応したキャラをcandidateに追加      
-                candidate.add(string);
+    Integer abilityCount=0;//クエストのギミック数のカウント変数
+    List<String> candidate=new ArrayList<String>();//候補のリストの作成
+      for(String ability:args){//コマンドラインのギミックを取り出してabilityに代入
+         List<String> monsterList=new ArrayList<String>();//
+            monsterList=characterMap.get(ability);//コマンドライン引数で受け取ったギミックをcharacterMapからキャラ名を受け取る
+            for(String characterName:monsterList){//アビリティに対応したキャラをcharacterNameに代入
+                candidate.add(characterName);//候補のリストにキャラ名を代入
             }
             abilitycount+=1;
         }
