@@ -13,7 +13,6 @@ public class GradeChecker2{
 			File afile = new File(file);
 			fileList.add(afile);
 		}
-		//Map<Integer,Double> gradeMap = new HashMap<Integer,Double>();
 		File testfile=fileList.get(0);
 		BufferedReader intest = new BufferedReader(new FileReader(testfile));
 		File taskfile=fileList.get(1);
@@ -33,7 +32,6 @@ public class GradeChecker2{
 			String[] testitem = testline.split(",");
 			number = new Integer(testitem[0]);//IDの取得
 			score = new Double(testitem[1]);//テストの点数の取得
-			//gradeMap.put(number,score);
 			if(Objects.equals(testCount,number)){
 				testScoreList.add(score);
 				testCount+=1;
@@ -96,30 +94,36 @@ public class GradeChecker2{
 		}
 		
 
-		for(Integer i=0;i<testCount;i++){
+		for(Integer i=0;i<testCount-1;i++){
 			Double resultTest = testScoreList.get(i);
 			Integer resultTotal = totalScoreList.get(i);
 			Double resultAttend = attendRateList.get(i);
-			System.out.println(i+1 +","+resultTest+","+resultTotal+","+resultAttend);
+			Double resultAttendRate = resultAttend/14;
+			Double doubleResultTotal = new Double(resultTotal);
+			Double finalResult = (0.7*resultTest)+((25*doubleResultTotal)/60) +(5*resultAttendRate);
+			String rating;
+			if(finalResult>90.0){
+				rating="秀";
+			}
+			else if(finalResult>80.0){
+				rating="優";
+			}
+			else if(finalResult>70.0){
+				rating="良";
+			}
+			else if(finalResult>60.0){
+				rating="可";
+			}
+			else{
+				rating="不可";
+			}
+
+			System.out.printf("%d,%3.0f,%6.3f,%d,%2.0f,%s\n",i+1,finalResult,resultTest,resultTotal,resultAttend,rating);
 		}
 	}
 
-/*
-			for(Integer i=1;i<=count;i++){
-				String rating=new String();
-				if(gradeMap.get(i)==null){
-					gradeMap.put(i,0.00000);
-					rating="K";
-				}
-				else{
-					gradeMap.put(number,score);
-				}
-				System.out.println(i+","+gradeMap.get(i)+","+rating);
-			}
-			*/
-
-			public static void main(String args[])throws IOException{
-				GradeChecker2 application = new GradeChecker2();
-				application.run(args);
-			}
-		}
+	public static void main(String args[])throws IOException{
+		GradeChecker2 application = new GradeChecker2();
+		application.run(args);
+	}
+}
