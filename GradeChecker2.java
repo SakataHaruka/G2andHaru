@@ -36,12 +36,12 @@ public class GradeChecker2{
 			//gradeMap.put(number,score);
 			if(Objects.equals(testCount,number)){
 				testScoreList.add(score);
-				//count+=1;
+				testCount+=1;
 			}
 			else{
 				testScoreList.add(0.0);
 				testScoreList.add(score);
-				testCount+=1;
+				testCount+=2;
 			}
 			while((taskline = intask.readLine()) != null){
 				Integer totalScore=0;
@@ -59,25 +59,38 @@ public class GradeChecker2{
 				while((miniline = inmini.readLine()) != null){
 					Double attendRate=0.0;
 					String[] miniitem = miniline.split(",");
-					if(Objects.equals(miniCount,number)){
+					Integer studentNumber = new Integer(miniitem[0]);//IDの取得
+					if(Objects.equals(miniCount,studentNumber)){
 						//count+=1;
 						for(Integer i=1;i<=miniitem.length-1;i++){
 							
 							if(!Objects.equals(miniitem[i],"")){
-								attendRate += 1;
+								attendRate += 1.0;
 							}
 
 							else{
-								attendRate += 0;
+								attendRate += 0.0;
 							}
 						}
-						attendRate /= 14;
-						attendRateList.add(attendRate);
-					}
-					else{
-						attendRateList.add(0.0);
+						attendRate /= 14.0;
 						attendRateList.add(attendRate);
 						miniCount+=1;
+					}
+					else{
+						for(Integer i=1;i<=miniitem.length-1;i++){
+							
+							if(!Objects.equals(miniitem[i],"")){
+								attendRate += 1.0;
+							}
+
+							else{
+								attendRate += 0.0;
+							}
+						}
+						attendRate /= 14.0;
+						attendRateList.add(0.0);
+						attendRateList.add(attendRate);
+						miniCount+=2;
 					}
 				}
 			}
