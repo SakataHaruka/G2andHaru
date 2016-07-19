@@ -98,7 +98,7 @@ public class GradeChecker2{
 		}
 		
 
-		for(Integer i=0;i<=testCount;i++){
+		for(Integer i=0;i<testCount;i++){
 			Double resultTest = testScoreList.get(i);
 			Integer resultTotal = totalScoreList.get(i);
 			Double resultAttend = attendRateList.get(i);
