@@ -72,7 +72,6 @@ public class GradeChecker2{
 								attendRate += 0.0;
 							}
 						}
-						attendRate /= 14.0;
 						attendRateList.add(attendRate);
 						miniCount+=1;
 					}
@@ -87,7 +86,6 @@ public class GradeChecker2{
 								attendRate += 0.0;
 							}
 						}
-						attendRate /= 14.0;
 						attendRateList.add(0.0);
 						attendRateList.add(attendRate);
 						miniCount+=2;
